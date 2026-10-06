@@ -1,1 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+   <title>Mchangani School — Seen. Inspired. Prepared.</title>
+   <meta name="description"
+      content="Mchangani School: a caring learning community developing confident, responsible young people through quality education and character development.">
+   <meta property="og:title" content="Mchangani School">
+   <meta property="og:type" content="website">
+   <meta name="twitter:card" content="summary">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Manrope:wght@400;600;700&display=swap"
+      rel="stylesheet">
+   <style>
+      :root {
+         --primary: #0f4c45;
+         --primary-dark: #092f2b;
+         --secondary: #efe3cd;
+         --accent: #c8862a;
+         --bg: #fbf9f4;
+         --surface: #fff;
+         --text: #1a2422;
+         --muted: #5a6663;
+         --border: #e3ddd0;
+         --success: #1b7a43;
+         --warning: #a86a00;
+         --error: #b3261e;
+         --sh: 0 8px 30px rgba(9, 47, 43, .09);
+         box-sizing: border-box;
+         padding-top: env(safe-area-inset-top, 0px);
+         padding-bottom: env(safe-area-inset-bottom, 0px)
+      }
+
+      @media(prefers-color-scheme:dark) {
+         :root:not([data-theme="light"]) {
+            --primary: #5fc2b5;
+            --primary-dark: #0b1a18;
+            --secondary: #1f2c29;
+            --accent: #e2a548;
+            --bg: #0e1614;
+            --surface: #16211f;
+            --text: #eef2f0;
+            --muted: #a3b0ac;
+            --border: #2a3936;
+            --sh: 0 8px 30px rgba(0, 0, 0, .4)
+         }
+      }
+
+      :root[data-theme="dark"] {
+         --primary: #5fc2b5;
+         --primary-dark: #0b1a18;
+         --secondary: #1f2c29;
+         --accent: #e2a548;
+         --bg: #0e1614;
+         --surface: #16211f;
+         --text: #eef2f0;
+         --muted: #a3b0ac;
+         --border: #2a3936;
+         --sh: 0 8px 30px rgba(0, 0, 0, .4)
+      }
+
+      html {
+         scroll-behavior: smooth;
+         scroll-padding-top: calc(80px + env(safe-area-inset-top, 0px))
+      }
+
+      * {
+         box-sizing: border-box
+      }
+
+      body {
+         margin: 0;
+         background: var(--bg);
+         color: var(--text);
+         font: 16px/1.65 Manrope, system-ui, sans-serif
+      }
+
+      h1,
+      h2,
+      h3 {
+         font-family: Fraunces, Georgia, serif;
+         line-height: 1.15;
+         margin: 0 0 .5em;
+         color: var(--text)
+      }
+
+      h1 {
+         font-size: clamp(2.1rem, 6vw, 4rem)
+      }
+
+      h2 {
+         font-size: clamp(1.6rem, 3.6vw, 2.5rem)
+      }
+
+      h3 {
+         font-size: 1.2rem
+      }
+
+      p {
+         margin: 0 0 1em;
+         color: var(--muted)
+      }
+
+      a {
+         color: inherit
+      }
+
+      img,
+      svg {
+         max-width: 100%
+      }
+
+      :focus-visible {
+         outline: 3px solid var(--accent);
+         outline-offset: 2px
+      }
+
+      .wrap {
+         max-width: 1160px;
+         margin: 0 auto;
+         padding: 0 20px
+      }
+
+      section {
+         padding: 72px 0
+      }
+
+      .alt {
+         background: var(--secondary)
+      }
+
+      .eyebrow {
+         font-size: .78rem;
+         letter-spacing: .14em;
+         text-transform: uppercase;
+         color: var(--accent);
+         font-weight: 700;
+         margin-bottom: 10px;
+         display: block
+      }
+
+      .btn {
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         min-height: 48px;
+         padding: 0 24px;
+         border-radius: 8px;
+         font-weight: 700;
+         text-decoration: none;
+         border: 2px solid transparent;
+         cursor: pointer;
+         font: inherit;
+         font-weight: 700;
+         transition: transform .2s, box-shadow .2s, background .2s
+      }
+
+      .btn:hover {
+         transform: translateY(-2px);
+         box-shadow: var(--sh)
+      }
+
+      .b1 {
+         background: var(--accent);
+         color: #1a1200
+      }
+
+      .b2 {
+         background: transparent;
+         border-color: currentColor;
+         color: inherit
+      }
+
+      .b3 {
+         background: var(--primary);
+         color: var(--bg)
+      }
+
+      .btn[disabled] {
+         opacity: .6;
+         cursor: wait
+      }
+
+      header {
+         position: sticky;
+         top: 0;
+         z-index: 50;
+         background: color-mix(in srgb, var(--bg) 92%, transparent);
+         backdrop-filter: blur(10px);
+         border-bottom: 1px solid var(--border);
+         padding-top: env(safe-area-inset-top, 0px)
+      }
+
+      .nav {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         height: 72px
+      }
+
+      .logo {
+         display: flex;
+         align-items: center;
+         gap: 10px;
+         text-decoration: none;
+         font-family: Fraunces, serif;
+         font-weight: 700;
+         font-size: 1.15rem;
+         color: var(--primary)
+      }
+
+      .logo i {
+         width: 38px;
+         height: 38px;
+         border-radius: 8px;
+         background: var(--primary);
+         color: var(--bg);
+         display: grid;
+         place-items: center;
+         font-style: normal
+      }
+
+      nav ul {
+         display: flex;
+         gap: 20px;
+         list-style: none;
+         margin: 0;
+         padding: 0
+      }
+
+      nav a {
+         text-decoration: none;
+         font-weight: 600;
+         font-size: .92rem;
+         padding: 6px 0;
+         border-bottom: 2px solid transparent
+      }
+
+      nav a:hover,
+      nav a[aria-current] {
+         border-color: var(--accent)
+      }
+
+      .menu {
+         display: none;
+         background: none;
+         border: 0;
+         width: 48px;
+         height: 48px;
+         cursor: pointer;
+         color: var(--text)
+      }
+
+      .menu span {
+         display: block;
+         width: 24px;
+         height: 2px;
+         background: currentColor;
+         margin: 6px auto;
+         transition: .3s
+      }
+
+      .menu[aria-expanded=true] span:first-child {
+         transform: translateY(4px) rotate(45deg)
+      }
+
+      .menu[aria-expanded=true] span:last-child {
+         transform: translateY(-4px) rotate(-45deg)
+      }
+
+      @media(max-width:1180px) {
+         .menu {
+            display: block;
+            border: 1.5px solid var(--border);
+            border-radius: 8px
+         }
+
+         .hcta {
+            display: none
+         }
+
+         nav {
+            position: absolute;
+            top: 100%;
+            right: 12px;
+            margin-top: 6px;
+            width: min(320px, calc(100vw - 24px));
+            max-height: calc(100dvh - 110px);
+            overflow-y: auto;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: var(--sh);
+            padding: 8px 18px 16px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-8px);
+            transition: opacity .25s, transform .25s, visibility .25s
+         }
+
+         nav.open {
+            opacity: 1;
+            visibility: visible;
+            transform: none
+         }
+
+         nav ul {
+            flex-direction: column;
+            gap: 0
+         }
+
+         nav a {
+            display: block;
+            font-size: 1rem;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border)
+         }
+
+         nav .row .btn {
+            flex: 1;
+            min-width: 130px
+         }
+      }
+
+      .hero {
+         background: linear-gradient(160deg, var(--primary-dark), var(--primary));
+         color: #fff;
+         padding: 56px 0;
+         position: relative;
+         overflow: hidden;
+         min-height: min(720px, calc(100svh - 72px));
+         display: flex;
+         align-items: center
+      }
+
+      .hero .wrap {
+         width: 100%
+      }
+
+      .hero:after {
+         content: "";
+         position: absolute;
+         right: -120px;
+         top: -120px;
+         width: 420px;
+         height: 420px;
+         border-radius: 50%;
+         border: 60px solid rgba(200, 134, 42, .18)
+      }
+
+      .hero h1,
+      .hero p {
+         color: #fff;
+         max-width: 760px;
+         position: relative;
+         z-index: 1
+      }
+
+      .hero p {
+         opacity: .9;
+         font-size: 1.1rem
+      }
+
+      .hero .row {
+         position: relative;
+         z-index: 1
+      }
+
+      .row {
+         display: flex;
+         gap: 14px;
+         flex-wrap: wrap
+      }
+
+      .pagehero {
+         background: var(--primary-dark);
+         color: #fff;
+         padding: 64px 0
+      }
+
+      .pagehero h1 {
+         color: #fff;
+         font-size: clamp(1.9rem, 4.5vw, 3rem)
+      }
+
+      .pagehero p {
+         color: #e5ede9;
+         max-width: 640px;
+         margin: 0
+      }
+
+      .strip {
+         background: var(--surface);
+         border-bottom: 1px solid var(--border)
+      }
+
+      .strip .wrap {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+         gap: 16px;
+         padding: 22px 20px;
+         font-weight: 700;
+         font-size: .9rem
+      }
+
+      .strip span {
+         display: flex;
+         gap: 10px;
+         align-items: center
+      }
+
+      .strip b {
+         color: var(--accent);
+         font-size: 1.2rem
+      }
+
+      .grid {
+         display: grid;
+         gap: 22px;
+         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+      }
+
+      .card {
+         background: var(--surface);
+         border: 1px solid var(--border);
+         border-radius: 12px;
+         padding: 26px;
+         transition: transform .25s, box-shadow .25s
+      }
+
+      .card:hover {
+         transform: translateY(-4px);
+         box-shadow: var(--sh)
+      }
+
+      .card .n {
+         color: var(--accent);
+         font-family: Fraunces, serif;
+         font-size: 1.6rem;
+         font-weight: 700
+      }
+
+      .split {
+         display: grid;
+         gap: 40px;
+         grid-template-columns: 1fr 1fr;
+         align-items: center
+      }
+
+      @media(max-width:800px) {
+         .split {
+            grid-template-columns: 1fr
+         }
+
+         section {
+            padding: 52px 0
+         }
+      }
+
+      .ph {
+         border-radius: 12px;
+         min-height: 240px;
+         display: grid;
+         place-items: center;
+         color: #fff;
+         font-weight: 700;
+         text-align: center;
+         padding: 16px;
+         background: linear-gradient(135deg, var(--c1, #0f4c45), var(--c2, #c8862a));
+         position: relative;
+         overflow: hidden
+      }
+
+      .ph small {
+         position: absolute;
+         bottom: 8px;
+         left: 12px;
+         opacity: .85;
+         font-weight: 600
+      }
+
+      .ph img {
+         position: absolute;
+         inset: 0;
+         width: 100%;
+         height: 100%;
+         object-fit: cover
+      }
+
+      .tall {
+         min-height: 380px
+      }
+
+      .steps {
+         counter-reset: s;
+         display: grid;
+         gap: 14px
+      }
+
+      .step {
+         display: flex;
+         gap: 16px;
+         background: var(--surface);
+         border: 1px solid var(--border);
+         border-radius: 12px;
+         padding: 18px
+      }
+
+      .step:before {
+         counter-increment: s;
+         content: "0" counter(s);
+         font-family: Fraunces, serif;
+         font-size: 1.8rem;
+         color: var(--accent);
+         font-weight: 700
+      }
+
+      .step h3 {
+         margin: 0
+      }
+
+      .step p {
+         margin: 0
+      }
+
+      form {
+         display: grid;
+         gap: 16px;
+         background: var(--surface);
+         border: 1px solid var(--border);
+         border-radius: 12px;
+         padding: 26px
+      }
+
+      .two {
+         display: grid;
+         gap: 16px;
+         grid-template-columns: 1fr 1fr
+      }
+
+      @media(max-width:600px) {
+         .two {
+            grid-template-columns: 1fr
+         }
+      }
+
+      label {
+         font-weight: 700;
+         font-size: .9rem;
+         display: block;
+         margin-bottom: 6px
+      }
+
+      input,
+      select,
+      textarea {
+         width: 100%;
+         min-height: 48px;
+         padding: 10px 14px;
+         border: 1.5px solid var(--border);
+         border-radius: 8px;
+         background: var(--bg);
+         color: var(--text);
+         font: inherit
+      }
+
+      textarea {
+         min-height: 110px
+      }
+
+      input[aria-invalid=true],
+      select[aria-invalid=true],
+      textarea[aria-invalid=true] {
+         border-color: var(--error)
+      }
+
+      .err {
+         color: var(--error);
+         font-size: .85rem;
+         margin-top: 4px;
+         min-height: 1em
+      }
+
+      .hp {
+         position: absolute;
+         left: -9999px
+      }
+
+      .ok {
+         background: color-mix(in srgb, var(--success) 12%, var(--surface));
+         border: 1px solid var(--success);
+         border-radius: 12px;
+         padding: 24px
+      }
+
+      .ok h3 {
+         color: var(--success)
+      }
+
+      .note {
+         font-size: .82rem;
+         color: var(--muted)
+      }
+
+      .flt {
+         display: flex;
+         gap: 8px;
+         flex-wrap: wrap;
+         margin-bottom: 22px
+      }
+
+      .flt button {
+         min-height: 44px;
+         padding: 0 16px;
+         border-radius: 99px;
+         border: 1.5px solid var(--border);
+         background: var(--surface);
+         color: var(--text);
+         cursor: pointer;
+         font: inherit;
+         font-weight: 600
+      }
+
+      .flt button[aria-pressed=true] {
+         background: var(--primary);
+         color: var(--bg);
+         border-color: var(--primary)
+      }
+
+      .gal {
+         display: grid;
+         grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+         gap: 14px
+      }
+
+      .gal button {
+         border: 0;
+         padding: 0;
+         cursor: zoom-in;
+         background: none;
+         border-radius: 12px;
+         overflow: hidden
+      }
+
+      .gal .ph {
+         min-height: 200px;
+         transition: transform .4s
+      }
+
+      .gal button:hover .ph {
+         transform: scale(1.04)
+      }
+
+      .lb {
+         position: fixed;
+         inset: 0;
+         background: rgba(0, 0, 0, .92);
+         z-index: 100;
+         display: none;
+         align-items: center;
+         justify-content: center;
+         flex-direction: column;
+         gap: 14px;
+         padding: 20px
+      }
+
+      .lb.open {
+         display: flex
+      }
+
+      .lb .ph {
+         width: min(900px, 92vw);
+         min-height: min(60vh, 520px)
+      }
+
+      .lb p {
+         color: #fff;
+         margin: 0
+      }
+
+      .lb .row button {
+         min-height: 48px;
+         min-width: 48px;
+         border-radius: 8px;
+         border: 0;
+         cursor: pointer;
+         font-size: 1.1rem
+      }
+
+      details {
+         background: var(--surface);
+         border: 1px solid var(--border);
+         border-radius: 10px;
+         padding: 16px 20px;
+         margin-bottom: 10px
+      }
+
+      summary {
+         font-weight: 700;
+         cursor: pointer;
+         min-height: 24px
+      }
+
+      details p {
+         margin: 10px 0 0
+      }
+
+      .tag {
+         display: inline-block;
+         font-size: .75rem;
+         font-weight: 700;
+         padding: 3px 10px;
+         border-radius: 99px;
+         background: var(--secondary);
+         color: var(--text);
+         margin-right: 6px
+      }
+
+      .cta {
+         background: var(--primary);
+         color: #fff;
+         text-align: center
+      }
+
+      .cta h2,
+      .cta p {
+         color: #fff
+      }
+
+      .cta p {
+         opacity: .9;
+         max-width: 560px;
+         margin: 0 auto 24px
+      }
+
+      .cta .row {
+         justify-content: center
+      }
+
+      .quote {
+         font-family: Fraunces, serif;
+         font-size: clamp(1.3rem, 3vw, 1.9rem);
+         color: var(--text);
+         max-width: 780px
+      }
+
+      footer {
+         background: var(--primary-dark);
+         color: #cfdcd8;
+         padding: 56px 0 24px;
+         padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px))
+      }
+
+      footer h3 {
+         color: #fff;
+         font-size: 1rem
+      }
+
+      footer p {
+         color: #b7c8c3
+      }
+
+      footer ul {
+         list-style: none;
+         padding: 0;
+         margin: 0
+      }
+
+      footer li {
+         margin-bottom: 8px
+      }
+
+      footer a {
+         text-decoration: none
+      }
+
+      footer a:hover {
+         color: var(--accent)
+      }
+
+      .fg {
+         display: grid;
+         gap: 30px;
+         grid-template-columns: 2fr 1fr 1fr 1.5fr
+      }
+
+      @media(max-width:800px) {
+         .fg {
+            grid-template-columns: 1fr 1fr
+         }
+      }
+
+      .copy {
+         border-top: 1px solid rgba(255, 255, 255, .15);
+         margin-top: 36px;
+         padding-top: 18px;
+         font-size: .85rem
+      }
+
+      .wa {
+         position: fixed;
+         right: 16px;
+         bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+         z-index: 60;
+         background: #1faa59;
+         color: #fff;
+         border-radius: 99px;
+         height: 56px;
+         min-width: 56px;
+         padding: 0 20px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         gap: 8px;
+         text-decoration: none;
+         font-weight: 700;
+         box-shadow: 0 6px 20px rgba(0, 0, 0, .3);
+         animation: pulse 2.6s infinite
+      }
+
+      @media(max-width:700px) {
+         .wa span {
+            display: none
+         }
+
+         .wa {
+            padding: 0;
+            width: 56px
+         }
+      }
+
+      @keyframes pulse {
+         0% {
+            box-shadow: 0 0 0 0 rgba(31, 170, 89, .5)
+         }
+
+         70% {
+            box-shadow: 0 0 0 16px rgba(31, 170, 89, 0)
+         }
+
+         100% {
+            box-shadow: 0 0 0 0 rgba(31, 170, 89, 0)
+         }
+      }
+
+      .rv {
+         opacity: 0;
+         transform: translateY(20px);
+         transition: .7s
+      }
+
+      .rv.in {
+         opacity: 1;
+         transform: none
+      }
+
+      @media(prefers-reduced-motion:reduce) {
+         * {
+            animation: none !important;
+            transition: none !important;
+            scroll-behavior: auto !important
+         }
+
+         .rv {
+            opacity: 1;
+            transform: none
+         }
+      }
+
+      .badge {
+         background: var(--secondary);
+         border: 1px dashed var(--accent);
+         padding: 10px 14px;
+         border-radius: 8px;
+         font-size: .85rem;
+         color: var(--text);
+         margin-bottom: 22px
+      }
+
+      .tbl {
+         overflow-x: auto
+      }
+
+      html,
+      body {
+         max-width: 100%;
+         overflow-x: hidden
+      }
+
+      h1,
+      h2,
+      h3,
+      p,
+      a,
+      summary {
+         overflow-wrap: anywhere
+      }
+
+      .grid>*,
+      .split>*,
+      .two>*,
+      .gal>*,
+      .fg>* {
+         min-width: 0
+      }
+
+      iframe,
+      video {
+         max-width: 100%
+      }
+
+      @media(max-width:480px) {
+         .fg {
+            grid-template-columns: 1fr
+         }
+
+         .wrap {
+            padding: 0 16px
+         }
+
+         .btn {
+            width: 100%
+         }
+
+         .row .btn {
+            flex: 1 1 100%
+         }
+
+         .card,
+         form {
+            padding: 20px
+         }
+
+         .hero {
+            padding: 44px 0
+         }
+
+         .tall {
+            min-height: 260px
+         }
+
+         .gal {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px
+         }
+
+         .gal .ph {
+            min-height: 140px
+         }
+      }
+   </style>
+</head>
+
+<body>
+   <a href="#main" style="position:absolute;left:-999px" onfocus="this.style.left='8px'"
+      onblur="this.style.left='-999px'">Skip to content</a>
+   <header>
+      <div class="wrap nav">
+         <a class="logo" href="#/" aria-label="Mchangani School home"><i aria-hidden="true">M</i>Mchangani School</a>
+         <nav id="nav" aria-label="Main">
+            <ul id="links"></ul>
+            <div class="row" style="margin-top:20px"><a class="btn b1" href="#/admissions">Apply for Admission</a><a
+                  class="btn b2" href="#/enquiry">Make an Enquiry</a></div>
+         </nav>
+         <div class="row hcta"><a class="btn b1" href="#/admissions">Apply for Admission</a></div>
+         <button class="menu" id="menu" aria-label="Toggle menu"
+            aria-expanded="false"><span></span><span></span></button>
+      </div>
+   </header>
+   <main id="main" tabindex="-1"></main>
+   <footer>
+      <div class="wrap">
+         <div class="fg">
+            <div>
+               <h3>Mchangani School</h3>
+               <p id="fdesc"></p>
+            </div>
+            <div>
+               <h3>Explore</h3>
+               <ul>
+                  <li><a href="#/about">About</a></li>
+                  <li><a href="#/academics">Academics</a></li>
+                  <li><a href="#/admissions">Admissions</a></li>
+                  <li><a href="#/life">Student Life</a></li>
+                  <li><a href="#/gallery">Gallery</a></li>
+                  <li><a href="#/careers">Careers</a></li>
+               </ul>
+            </div>
+            <div>
+               <h3>Information</h3>
+               <ul>
+                  <li><a href="#/news">News &amp; Events</a></li>
+                  <li><a href="#/faq">FAQ</a></li>
+                  <li><a href="#/policies">Policies</a></li>
+                  <li><a href="#/facilities">Facilities</a></li>
+                  <li><a href="#/contact">Contact</a></li>
+               </ul>
+            </div>
+            <div>
+               <h3>Contact</h3>
+               <ul id="fcon"></ul>
+            </div>
+         </div>
+         <div class="copy"><span id="yr"></span> Mchangani School. All Rights Reserved. &nbsp;·&nbsp; <a
+               href="#/privacy">Privacy Policy</a> · <a href="#/policies">Terms</a> · <a
+               href="#/policies">Accessibility</a><br>Social: <span id="soc"></span></div>
+      </div>
+   </footer>
+   <a class="wa" id="wa" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><svg width="24"
+         height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+         <path
+            d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.2 13.9c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 1-2.300c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 2c.1.200.1.300 0 .5l-.3.400-.4.400c-.1.100-.3.300-.1.600.2.300.7 1.200 1.500 1.900 1 .9 1.900 1.200 2.200 1.300.3.100.4.100.6-.1l.8-1c.2-.3.400-.2.600-.1l1.900.9c.3.100.5.200.5.300.1.200.1.700-.1 1.300z" />
+      </svg><span>Chat With Us</span></a>
+   <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image viewer">
+      <div class="ph" id="lbi"></div>
+      <p id="lbc"></p>
+      <div class="row"><button id="lp" aria-label="Previous">←</button><button id="lc">Close</button><button id="ln"
+            aria-label="Next">→</button></div>
+   </div>
+   <script>
+      /* ===== CENTRAL CONFIG — edit this block only. Replace null/placeholder values with real school data. ===== */
+      const CONFIG = {
+         name: "Mchangani School",
+         phone: null,            // e.g. "+254700000000" (display)
+         whatsapp: null,         // digits only, e.g. "254700000000"
+         email: null,            // e.g. "info@school.example"
+         address: null,          // school address (not invented)
+         hours: "Mon–Fri, 8:00am–4:00pm (placeholder — confirm)",
+         mapEmbed: null,         // Google Maps embed URL
+         formEndpoint: null,     // POST endpoint for forms; if null, submissions are simulated
+         social: { Facebook: null, Instagram: null, TikTok: null, YouTube: null, X: null, LinkedIn: null },
+         levels: ["Early Years", "Primary", "Junior Secondary", "Senior School"], // list ONLY confirmed levels
+         facilities: ["Classrooms", "Library", "ICT / Computer Lab", "Science Facilities", "Sports Areas", "Dining Facilities", "Play Areas"], // list ONLY real ones
+         sports: ["Football", "Basketball", "Athletics", "Netball", "Volleyball", "Swimming"], // list ONLY sports the school offers
+         /* Per-item media, keyed by slug (facility: "ict-computer-lab", sport: "football").
+            images = up to 6 URLs in angle order; video = YouTube link or direct .mp4 URL.
+            Example: media:{"football":{images:["https://.../1.jpg"],video:"https://www.youtube.com/watch?v=XXXX"}} */
+         media: {},
+         images: { hero: null, about: null, leader: null } // image URLs; gradient placeholders shown when null
+      };
+      const GALLERY = [["School Life", "Morning assembly"], ["Classrooms", "Learning together"], ["Sports", "Inter-house sports"], ["Events", "Annual open day"], ["Students", "Student leaders"], ["Teachers", "Teacher and learner"], ["Creativity", "Art showcase"], ["Celebrations", "Graduation day"], ["School Facilities", "Library corner"], ["Trips & Experiences", "Learning trip"], ["Sports", "Football practice"], ["Creativity", "Music rehearsal"]].map((g, i) => ({ cat: g[0], cap: g[1] + " (placeholder)", src: null, i }));
+      const NEWS = [["Announcements", "Term dates announced", "Placeholder article. Replace with real school news.", "This is placeholder text. Publish the official term dates, reporting days and any reminders for parents here.|Add a contact person or office for questions."], ["Events", "Open day invitation", "Placeholder event. Add date and details.", "This is placeholder text. Add the date, time, venue and programme for the open day.|Tell families how to register or who to contact."], ["Achievements", "Students shine in competition", "Placeholder achievement. Only publish verified results.", "This is placeholder text. Publish only verified results and name the competition, date and learners involved (with consent).|Add photos when available."]];
+      const JOBS = [["Primary Teacher", "Teaching", "Full-time"], ["Administrative Assistant", "Administration", "Full-time"], ["ICT Support Officer", "ICT", "Contract"]];
+      const FAQ = [["How do I apply for admission?", "Submit the admission enquiry form. The school will respond with the next steps."], ["Can I schedule a school visit?", "Yes. Use the Request a School Visit form or chat with us on WhatsApp."], ["What programmes does the school offer?", "See the Academics page. Programme details are confirmed by the school office."], ["Does the school offer transport?", "Please enquire; availability is confirmed by the school."], ["How can I apply for a job?", "Visit Careers, choose a vacancy and submit your CV."], ["How do I make an enquiry?", "Use the Enquiry page, call, or message on WhatsApp."]];
+      /* ===== UI ===== */
+      const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+      const NAV = [["", "Home"], ["about", "About"], ["academics", "Academics"], ["admissions", "Admissions"], ["life", "Student Life"], ["gallery", "Gallery"], ["careers", "Careers"], ["news", "News & Events"], ["contact", "Contact"]];
+      const COL = [["#0f4c45", "#c8862a"], ["#092f2b", "#5b8f86"], ["#7a4b12", "#c8862a"], ["#1d5c66", "#0f4c45"]];
+      const waLink = (t = "Hello Mchangani School, I would like to make an enquiry.") => CONFIG.whatsapp ? `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(t)}` : null;
+      const ph = (label, k = 0, cls = "", src = null) => `<div class="ph ${cls}" style="--c1:${COL[k % 4][0]};--c2:${COL[k % 4][1]}" role="img" aria-label="${label}">${src ? `<img loading="lazy" src="${src}" alt="${label}">` : ""}<span>${label}</span><small>Replace image</small></div>`;
+      const wa = (t, lbl = "Chat on WhatsApp") => waLink(t) ? `<a class="btn b2" target="_blank" rel="noopener" href="${waLink(t)}">${lbl}</a>` : `<span class="note">WhatsApp number not yet configured.</span>`;
+      const hero = (t, p) => `<div class="pagehero"><div class="wrap"><h1>${t}</h1><p>${p}</p></div></div>`;
+      const ctaVisit = `<section class="cta"><div class="wrap rv"><h2>Come and Experience Mchangani.</h2><p>Sometimes the best way to understand a school is to experience it.</p><div class="row"><a class="btn b1" href="#/visit">Request a School Visit</a><a class="btn b2" href="#/enquiry">Make an Enquiry</a></div></div></section>`;
+      const cards = (a) => `<div class="grid">${a.map((c, i) => `<div class="card rv"><div class="n">0${i + 1}</div><h3>${c[0]}</h3><p>${c[1] || ""}</p>${c[2] ? `<a href="${c[2]}" style="font-weight:700;color:var(--accent)">${c[3] || "Read more"} →</a>` : ""}</div>`).join("")}</div>`;
+      const placeholderNote = `<div class="badge">Placeholder content — replace with verified school information before launch.</div>`;
+      const VALUES = ["Integrity", "Excellence", "Respect", "Responsibility", "Teamwork", "Creativity", "Leadership", "Compassion"].map(v => [v, ""]);
+      const WHY = [["Strong Academic Foundation", "Focused learning supported by committed educators."], ["Character Development", "Helping students develop discipline, confidence and responsibility."], ["Individual Attention", "An environment where learners are supported and encouraged."], ["Holistic Growth", "Balancing academics with creativity, sports and leadership."], ["Safe Learning Environment", "A culture of respect, responsibility and wellbeing."], ["Future Readiness", "Knowledge, communication, collaboration and problem-solving."]];
+      ["#/academics", "#/about", "#/about", "#/life", "#/policies", "#/academics"].forEach((l, i) => WHY[i][2] = l);
+      const gal = (list, filter) => `${filter ? `<div class="flt" role="group" aria-label="Filter gallery">${["All", ...new Set(GALLERY.map(g => g.cat))].map((c, i) => `<button aria-pressed="${!i}" data-f="${c}">${c}</button>`).join("")}</div>` : ""}<div class="gal" id="gal">${list.map(g => `<button data-i="${g.i}" data-c="${g.cat}" aria-label="Open ${g.cap}">${ph(g.cap, g.i, "", g.src)}</button>`).join("")}</div>`;
+      /* Forms */
+      const F = {
+         admission: { t: "Submit Admission Enquiry", f: [["Parent/Guardian Name", "text", "name", 1], ["Phone Number", "tel", "phone", 1], ["Email", "email", "email", 0], ["Student Name", "text", "student", 1], ["Student Age", "number", "age", 1], ["Current School", "text", "school", 0], ["Class/Grade Applying For", "select:" + CONFIG.levels.join("|"), "grade", 1], ["Preferred Intake", "text", "intake", 0], ["Preferred Contact Method", "select:Phone|WhatsApp|Email", "pref", 1], ["Message", "textarea", "msg", 0]] },
+         enquiry: { t: "Send Enquiry", f: [["Name", "text", "name", 1], ["Phone", "tel", "phone", 1], ["Email", "email", "email", 0], ["Enquiry Type", "select:Admissions|Academics|Fees|School Visit|Transport|Student Life|Careers|General Enquiry", "type", 1], ["Message", "textarea", "msg", 1]] },
+         visit: { t: "Request a School Visit", f: [["Name", "text", "name", 1], ["Phone", "tel", "phone", 1], ["Email", "email", "email", 0], ["Preferred Date", "date", "date", 1], ["Number of Visitors", "number", "n", 0], ["Message", "textarea", "msg", 0]] },
+         contact: { t: "Send Message", f: [["Name", "text", "name", 1], ["Email", "email", "email", 1], ["Phone", "tel", "phone", 0], ["Message", "textarea", "msg", 1]] },
+         career: { t: "Submit Application", f: [["Full Name", "text", "name", 1], ["Phone", "tel", "phone", 1], ["Email", "email", "email", 1], ["Position Applied For", "select:" + JOBS.map(j => j[0]).join("|") + "|Other", "pos", 1], ["Professional Summary", "textarea", "msg", 1], ["CV Upload (PDF/DOC, max 5MB)", "file", "cv", 1], ["Supporting Documents (optional)", "file", "docs", 0], ["I consent to Mchangani School processing my application data for recruitment.", "checkbox", "consent", 1]] }
+      };
+      function form(k, priv = "Your details are used only to respond to you and are never sold or shared.") {
+         const d = F[k];
+         return `<form data-k="${k}" novalidate aria-label="${d.t}"><div class="two">${d.f.map(([l, t, n, r]) => {
+            const id = k + n, req = r ? ' required aria-required="true"' : "", sel = t.startsWith("select:");
+            const el = sel ? `<select id="${id}" name="${n}"${req}><option value="">Select…</option>${t.slice(7).split("|").map(o => `<option>${o}</option>`).join("")}</select>` : t == "textarea" ? `<textarea id="${id}" name="${n}"${req}></textarea>` : t == "checkbox" ? `<input type="checkbox" id="${id}" name="${n}" style="width:auto;min-height:0"${req}>` : `<input id="${id}" name="${n}" type="${t}"${req}${t == "file" ? ' accept=".pdf,.doc,.docx"' : ""}>`;
+            const wide = t == "textarea" || t == "checkbox" || n == "msg" ? ' style="grid-column:1/-1"' : "";
+            return `<div${wide}>${t == "checkbox" ? `${el} <label for="${id}" style="display:inline">${l}</label>` : `<label for="${id}">${l}${r ? " *" : ""}</label>${el}`}<div class="err" id="${id}e" role="alert"></div></div>`
+         }).join("")}</div>
+<input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"><p class="note">${priv} Please do not include sensitive personal information.</p>
+<button class="btn b3" type="submit">${d.t}</button><div class="status" aria-live="polite"></div></form>`
+      }
+      function bindForms() {
+         $$("form[data-k]").forEach(f => {
+            let busy = false; f.addEventListener("submit", async e => {
+               e.preventDefault(); if (busy) return; let bad = null;
+               $$("[name]", f).forEach(el => {
+                  const err = $("#" + el.id + "e"); if (!err) return; let m = ""; const v = el.type == "checkbox" ? el.checked : el.value.trim();
+                  if (el.required && !v) m = "This field is required."; else if (v && el.type == "email" && !/^\S+@\S+\.\S+$/.test(v)) m = "Enter a valid email address."; else if (v && el.type == "tel" && !/^[+\d][\d\s()-]{6,}$/.test(v)) m = "Enter a valid phone number.";
+                  if (el.type == "file" && el.files[0]) { const x = el.files[0]; if (!/\.(pdf|docx?)$/i.test(x.name)) m = "Only PDF or Word files are allowed."; else if (x.size > 5e6) m = "File must be under 5MB." }
+                  err.textContent = m; el.setAttribute("aria-invalid", !!m); if (m && !bad) bad = el
+               });
+               if (bad) { bad.focus(); return }
+               if ($(".hp", f).value) return; /* spam honeypot */
+               busy = true; const b = $("button[type=submit]", f), st = $(".status", f); b.disabled = true; b.textContent = "Sending…";
+               try {
+                  if (CONFIG.formEndpoint) { const r = await fetch(CONFIG.formEndpoint, { method: "POST", body: new FormData(f) }); if (!r.ok) throw 0 } else await new Promise(r => setTimeout(r, 800));
+                  f.innerHTML = `<div class="ok" role="status"><h3>Thank you — we've received your message.</h3><p>The school office will get back to you soon.${CONFIG.formEndpoint ? "" : " (Demo mode: no backend connected yet, nothing was stored.)"}</p><div class="row">${wa("Hello Mchangani School, I just submitted a form on your website.")}${CONFIG.phone ? `<a class="btn b2" href="tel:${CONFIG.phone}">Call ${CONFIG.phone}</a>` : ""}</div></div>`
+               }
+               catch { busy = false; b.disabled = false; b.textContent = F[f.dataset.k].t; st.innerHTML = `<p class="err" role="alert">Network problem — please try again or use WhatsApp.</p>` }
+            })
+         })
+      }
+      /* Detail pages: facilities (all angles) and sports (photos + video) */
+      let LB = GALLERY;
+      const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+      const ANGLES = { facility: ["Entrance view", "Left side", "Right side", "Back view", "Close-up detail", "Overhead view"], sport: ["Training", "Match action", "Team", "Competition", "Skills practice", "Celebration"] };
+      const vid = u => !u ? `<div class="ph tall" role="img" aria-label="Video placeholder"><span>▶ Video coming soon</span><small>Set CONFIG.media video</small></div>` : /youtu/.test(u) ? `<iframe title="Video" src="${u.replace("watch?v=", "embed/").replace("youtu.be/", "www.youtube.com/embed/")}" allowfullscreen loading="lazy" style="width:100%;aspect-ratio:16/9;border:0;border-radius:12px"></iframe>` : `<video controls preload="none" style="width:100%;border-radius:12px" src="${u}"></video>`;
+      function detail(kind, s) {
+         const names = kind == "facility" ? CONFIG.facilities : CONFIG.sports, name = names.find(n => slug(n) == s); if (!name) return P["404"]();
+         const m = CONFIG.media[s] || {}, imgs = ANGLES[kind].map((a, i) => ({ i, cat: "", cap: `${name} — ${a}`, src: (m.images || [])[i] || null })); LB = imgs;
+         const back = kind == "facility" ? ["#/facilities", "All facilities"] : ["#/sports", "All sports"];
+         return hero(name, kind == "facility" ? "Explore this space from every angle." : "Photos and video from the field.") + `<section><div class="wrap"><p><a href="${back[0]}">← ${back[1]}</a></p>${placeholderNote}<h2>${kind == "facility" ? "See it from every angle" : "Photo gallery"}</h2><p>Tap any image to view full screen and swipe through with the arrows.</p>${gal(imgs)}<h2 style="margin-top:48px">${kind == "facility" ? "Video tour" : "Watch " + name}</h2>${vid(m.video)}<div class="row" style="margin-top:28px"><a class="btn b3" href="#/visit">Request a School Visit</a>${kind == "sport" ? `<div class="flt" style="margin:0">${names.filter(n => n != name).map(n => `<a class="btn b2" style="color:var(--text)" href="#/sport/${slug(n)}">${n}</a>`).join("")}</div>` : ""}</div></div></section>`
+      }
+      /* Pages */
+      const P = {
+         sports: () => hero("Sports", "Choose a sport to see photos and video.") + `<section><div class="wrap">${placeholderNote}<div class="grid">${CONFIG.sports.map((s, i) => `<a class="card" href="#/sport/${slug(s)}" style="text-decoration:none">${ph(s, i)}<h3 style="margin-top:14px">${s}</h3><p>Photos &amp; video →</p></a>`).join("")}</div></div></section>`,
+         article: a => { const n = NEWS.find(x => slug(x[1]) == a); if (!n) return P["404"](); return hero(n[1], n[0]) + `<section><div class="wrap" style="max-width:820px"><p><a href="#/news">← All news &amp; events</a></p>${placeholderNote}${ph(n[0], 3, "tall")}<article style="margin-top:24px">${n[3].split("|").map(t => `<p>${t}</p>`).join("")}</article><h3 style="margin-top:36px">More stories</h3><div class="row">${NEWS.filter(x => x != n).map(x => `<a class="btn b2" style="color:var(--text)" href="#/article/${slug(x[1])}">${x[1]}</a>`).join("")}</div></div></section>` + ctaVisit }, facility: a => detail("facility", a), sport: a => detail("sport", a),
+         "": () => `<div class="hero"><div class="wrap"><span class="eyebrow">Mchangani School</span><h1>Where Every Child Is Seen. Inspired. And Prepared for Tomorrow.</h1><p>Welcome to Mchangani School — a learning community committed to developing confident, responsible and capable young people through quality education, character development and meaningful experiences.</p><div class="row"><a class="btn b1" href="#/about">Explore Mchangani</a><a class="btn b2" href="#/enquiry">Start Admission Enquiry</a></div></div></div>
+<div class="strip"><div class="wrap">${["Quality Education", "Caring Environment", "Experienced Educators", "Holistic Development", "Safe Community"].map(s => `<span><b aria-hidden="true">✓</b>${s}</span>`).join("")}</div></div>
+<section><div class="wrap split"><div class="rv"><span class="eyebrow">Welcome</span><h2>More Than a School. A Community for Growth.</h2><p>We believe learning flourishes where children feel known. Academic excellence, character, discipline, creativity and leadership grow together here.</p><a class="btn b3" href="#/about">Our story</a></div>${ph("Photo: students learning", 0, "tall", CONFIG.images.about)}</div></section>
+<section class="alt"><div class="wrap"><span class="eyebrow">Why Mchangani</span><h2>Why families choose us</h2>${cards(WHY)}</div></section>
+<section><div class="wrap split">${ph("Photo: classroom", 1, "", CONFIG.images.about)}<div class="rv"><span class="eyebrow">Academic Experience</span><h2>Focused learning, committed educators</h2><p>From ${CONFIG.levels.join(", ")}, learners are challenged and supported at every stage.</p><a class="btn b3" href="#/academics">Explore academics</a></div></div></section>
+<section class="alt"><div class="wrap split"><div class="rv"><span class="eyebrow">Student Life</span><h2>Learning Doesn't Stop When the Bell Rings.</h2><p>Sports, music, art, clubs and leadership shape confident young people.</p><a class="btn b3" href="#/life">See student life</a></div>${ph("Photo: sports and clubs", 2, "", null)}</div></section>
+<section><div class="wrap">${placeholderNote}<span class="eyebrow">Leadership</span><h2>A Message From Our School Leadership</h2><div class="split">${ph("Portrait placeholder", 3, "", CONFIG.images.leader)}<div><p class="quote">“Every child who walks through our gates deserves to be seen, challenged and cared for.”</p><p><strong>[Name]</strong><br>[Headteacher / Principal]</p></div></div></div></section>
+<section class="alt"><div class="wrap"><span class="eyebrow">School Moments</span><h2>Moments That Make Mchangani</h2>${gal(GALLERY.slice(0, 8))}<p style="margin-top:22px"><a class="btn b3" href="#/gallery">View All School Moments</a></p></div></section>
+<section><div class="wrap"><span class="eyebrow">Latest</span><h2>News &amp; Events</h2><div class="grid">${NEWS.map(n => `<a class="card" href="#/article/${slug(n[1])}" style="text-decoration:none">${ph(n[0], 3)}<p style="margin-top:14px"><span class="tag">${n[0]}</span></p><h3>${n[1]}</h3><p>${n[2]}</p><span style="color:var(--accent);font-weight:700">Read more →</span></a>`).join("")}</div></div></section>
+<section class="cta"><div class="wrap rv"><h2>Your Child's Journey Starts Here.</h2><p>Begin with a simple enquiry. We will guide you through every step.</p><div class="row"><a class="btn b1" href="#/admissions">Apply for Admission</a><a class="btn b2" href="#/visit">Request a School Visit</a></div></div></section>`,
+         about: () => hero("About Mchangani", "Who we are and what we believe.") + `<section><div class="wrap">${placeholderNote}<div class="grid"><div class="card"><h3>Our Vision</h3><p>To be a school where every learner grows into a confident, responsible and capable contributor to society.</p></div><div class="card"><h3>Our Mission</h3><p>To provide quality education and character development in a safe, caring and inspiring community.</p></div></div><h2 style="margin-top:48px">Our Values</h2>${cards(VALUES)}</div></section><section class="alt"><div class="wrap"><h2>Trust &amp; Recognition</h2><div class="badge">Add verified accreditations, awards and partnerships here. None are claimed until supplied.</div><p class="quote">“Mchangani has given our child an environment where learning, confidence and character can grow together.”</p><p><strong>Parent/Guardian Name</strong> — Class/Level <em>(sample testimonial placeholder)</em></p></div></section>` + ctaVisit,
+         academics: () => hero("Academics", "A strong foundation, supported by committed educators.") + `<section><div class="wrap"><h2>Programmes</h2>${placeholderNote}${cards(CONFIG.levels.map(l => [l, "Programme details to be confirmed by the school.", "#/enquiry", "Ask about this"]))}<h2 style="margin-top:48px">Our approach</h2>${cards([["Learning philosophy", "Curiosity, effort and understanding."], ["Teaching approach", "Active, supportive classrooms."], ["Academic support", "Help when learners need it."], ["Assessment", "Regular, fair feedback."], ["Co-curricular learning", "Learning beyond textbooks."], ["Technology in education", "Used purposefully to enhance learning."]])}<p style="margin-top:28px"><a class="btn b3" href="#/enquiry">Ask About Our Academic Programmes</a></p></div></section>`,
+         admissions: () => hero("Your Child's Journey Starts Here.", "A clear, friendly admissions process.") + `<section><div class="wrap split" style="align-items:start"><div class="steps">${["Make an Enquiry", "Receive Information", "School Visit / Consultation", "Assessment Where Applicable", "Admission Confirmation", "Prepare for the School Journey"].map(s => `<div class="step"><div><h3>${s}</h3></div></div>`).join("")}</div><div><h2>Admission Enquiry</h2>${form("admission")}</div></div></section>` + ctaVisit,
+         enquiry: () => hero("Have a Question? Let's Talk.", "Admissions, fees, visits, transport and more.") + `<section><div class="wrap" style="max-width:760px">${form("enquiry")}<p style="margin-top:18px">${wa("Hello Mchangani School, I would like to make an enquiry.")}</p></div></section>`,
+         visit: () => hero("Come and Experience Mchangani.", "Sometimes the best way to understand a school is to experience it.") + `<section><div class="wrap" style="max-width:760px">${form("visit")}</div></section>`,
+         gallery: () => hero("School Moments", "Feel the atmosphere of Mchangani.") + `<section><div class="wrap">${placeholderNote}${gal(GALLERY, 1)}</div></section>`,
+         life: () => hero("Learning Doesn't Stop When the Bell Rings.", "Life beyond the classroom.") + `<section><div class="wrap">${placeholderNote}<div class="grid">${["Sports", "Clubs", "Music", "Art", "Leadership", "Competitions", "School Trips", "Community Activities", "Student Projects"].map((s, i) => s == "Sports" ? `<a class="card" href="#/sports" style="text-decoration:none">${ph(s, i)}<h3 style="margin-top:14px">Sports →</h3><p>Pick a sport to see photos and video.</p></a>` : `<div class="card">${ph(s, i)}<h3 style="margin-top:14px">${s}</h3></div>`).join("")}</div></div></section>` + ctaVisit,
+         facilities: () => hero("Facilities", "Spaces designed for learning and growth.") + `<section><div class="wrap"><div class="badge">Only list facilities the school actually has — edit CONFIG.facilities.</div><div class="grid">${CONFIG.facilities.map((s, i) => `<a class="card" href="#/facility/${slug(s)}" style="text-decoration:none">${ph(s, i)}<h3 style="margin-top:14px">${s}</h3><p>View from every angle →</p></a>`).join("")}</div></div></section>`,
+         careers: () => hero("Build the Future With Us.", "We value people passionate about education, service, leadership and helping young people grow.") + `<section><div class="wrap"><h2>Current Opportunities</h2><div class="badge">Sample vacancies — placeholders until real openings are supplied.</div><div class="grid">${JOBS.map(j => `<div class="card"><h3>${j[0]}</h3><p><span class="tag">${j[1]}</span><span class="tag">${j[2]}</span></p><p>Closing date: TBC. Location: ${CONFIG.address || "School campus"}.</p><a class="btn b3" href="#apply">Apply Now</a></div>`).join("")}</div><h2 id="apply" style="margin-top:48px">Apply</h2><div style="max-width:760px">${form("career", "Applications are private and used only for recruitment.")}</div></div></section>`,
+         news: () => hero("News & Events", "What's happening at Mchangani.") + `<section><div class="wrap"><div class="badge">Placeholder articles. Categories: School News, Announcements, Events, Achievements, Student Stories, Parent Information.</div><div class="grid">${NEWS.map((n, i) => `<article class="card">${ph(n[0], i)}<p style="margin-top:14px"><span class="tag">${n[0]}</span> Date TBC</p><h3>${n[1]}</h3><p>${n[2]}</p><a href="#/article/${slug(n[1])}" style="font-weight:700;color:var(--accent)">Read more →</a></article>`).join("")}</div></div></section>`,
+         faq: () => hero("Frequently Asked Questions", "Quick answers for families and visitors.") + `<section><div class="wrap" style="max-width:820px">${FAQ.map(q => `<details><summary>${q[0]}</summary><p>${q[1]}</p></details>`).join("")}</div></section>`,
+         contact: () => hero("Contact", "We'd love to hear from you.") + `<section><div class="wrap split" style="align-items:start"><div><div class="card"><h3>Visit Us</h3><p>${CONFIG.address || "Address to be added"}</p><h3>Call Us</h3><p>${CONFIG.phone || "Phone to be added"}</p><h3>Email Us</h3><p>${CONFIG.email || "Email to be added"}</p><h3>Opening Hours</h3><p>${CONFIG.hours}</p>${wa()}</div><div style="margin-top:20px">${CONFIG.mapEmbed ? `<iframe title="School location map" src="${CONFIG.mapEmbed}" style="width:100%;height:280px;border:0;border-radius:12px" loading="lazy"></iframe>` : ph("Map: add CONFIG.mapEmbed", 1)}</div></div><div><h2>Send Us a Message</h2>${form("contact")}</div></div></section>`,
+         policies: () => hero("Policies", "Terms, safeguarding and accessibility.") + `<section><div class="wrap" style="max-width:820px">${placeholderNote}<h2>School policies</h2><p>Upload or link official policies (admissions, safeguarding, conduct, fees) here.</p><h2>Accessibility</h2><p>We aim to meet modern accessibility standards. Tell us if you struggle to use any part of this site.</p></div></section>`,
+         privacy: () => hero("Privacy Policy", "How we handle your information.") + `<section><div class="wrap" style="max-width:820px">${placeholderNote}<p>We collect only the details needed to respond to enquiries and applications. Data is treated as private, not sold, and retained only as long as necessary. Contact the school to request access or deletion. Have this text reviewed against local data-protection law before launch.</p></div></section>`,
+         "404": () => `<section><div class="wrap" style="text-align:center;padding:60px 0"><h1>Looks Like This Page Took a School Trip.</h1><p>The page you're after isn't here, but we can help you find your way.</p><div class="row" style="justify-content:center"><a class="btn b3" href="#/">Back Home</a><a class="btn b2" href="#/contact">Contact Mchangani</a></div></div></section>`
+      };
+      const TITLES = { "": "Home", about: "About", academics: "Academics", admissions: "Admissions", enquiry: "Enquiry", visit: "School Visit", gallery: "Gallery", life: "Student Life", facilities: "Facilities", careers: "Careers", news: "News & Events", faq: "FAQ", contact: "Contact", policies: "Policies", privacy: "Privacy Policy" };
+      let gi = 0, shown = GALLERY;
+      function lb(i) { const n = LB.length; gi = (i + n) % n; const g = LB[gi]; $("#lbi").outerHTML = ph(g.cap, g.i, "", g.src).replace('class="ph ', 'id="lbi" class="ph '); $("#lbc").textContent = g.cap; $("#lb").classList.add("open"); $("#lc").focus() }
+      function route() {
+         const pr = (location.hash.replace(/^#\/?/, "") || "").split("?")[0].split("/"); let r = pr[0]; if (r == "apply") r = "careers"; const k = P[r] ? r : "404"; LB = GALLERY;
+         $("#main").innerHTML = P[k](pr[1]); document.title = (TITLES[k] ? TITLES[k] + " — " : "") + "Mchangani School";
+         $$("#links a").forEach(a => a.toggleAttribute("aria-current", a.getAttribute("href") == "#/" + r));
+         $("#nav").classList.remove("open"); $("#menu").setAttribute("aria-expanded", "false");
+         if (!location.hash.includes("apply")) window.scrollTo(0, 0); $("#main").focus({ preventScroll: true });
+         bindForms();
+         $$(".flt button").forEach(b => b.onclick = () => { $$(".flt button").forEach(x => x.setAttribute("aria-pressed", x == b)); $$("#gal button").forEach(t => t.style.display = b.dataset.f == "All" || t.dataset.c == b.dataset.f ? "" : "none") });
+         $$("#gal button").forEach(b => b.onclick = () => lb(+b.dataset.i));
+         const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) } }), { threshold: .12 }); $$(".rv").forEach(e => io.observe(e))
+      }
+      /* Init */
+      $("#links").innerHTML = NAV.map(n => `<li><a href="#/${n[0]}">${n[1]}</a></li>`).join("");
+      $("#menu").onclick = () => { const o = $("#nav").classList.toggle("open"); $("#menu").setAttribute("aria-expanded", o) };
+      const closeMenu = () => { $("#nav").classList.remove("open"); $("#menu").setAttribute("aria-expanded", "false") };
+      document.addEventListener("click", e => { if (!e.target.closest("header")) closeMenu() });
+      document.addEventListener("keydown", e => { if (e.key == "Escape") closeMenu() });
+      $("#fdesc").textContent = "A learning community developing confident, responsible and capable young people.";
+      $("#fcon").innerHTML = [CONFIG.phone, CONFIG.email, CONFIG.address].map((v, i) => `<li>${v || ["Phone", "Email", "Address"][i] + " to be added"}</li>`).join("") + `<li>${waLink() ? `<a href="${waLink()}">WhatsApp</a>` : "WhatsApp to be added"}</li>`;
+      $("#soc").innerHTML = Object.entries(CONFIG.social).map(([k, v]) => v ? `<a href="${v}" rel="noopener">${k}</a>` : k).join(" · ");
+      $("#yr").textContent = "© " + new Date().getFullYear();
+      const w = $("#wa"); if (waLink()) w.href = waLink(); else { w.href = "#/contact"; w.title = "WhatsApp number not yet configured" }
+      $("#lc").onclick = () => $("#lb").classList.remove("open"); $("#lp").onclick = () => lb(gi - 1); $("#ln").onclick = () => lb(gi + 1);
+      document.addEventListener("keydown", e => { if (!$("#lb").classList.contains("open")) return; if (e.key == "Escape") $("#lc").click(); if (e.key == "ArrowLeft") lb(gi - 1); if (e.key == "ArrowRight") lb(gi + 1) });
+      addEventListener("hashchange", route); route();
+   </script>
+</body>
+
+</html>
